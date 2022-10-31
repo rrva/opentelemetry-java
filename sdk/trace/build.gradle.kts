@@ -11,18 +11,12 @@ plugins {
 description = "OpenTelemetry SDK For Tracing"
 otelJava.moduleName.set("io.opentelemetry.sdk.trace")
 
-sourceSets {
-  main {
-    val traceShadedDeps = project(":sdk:trace-shaded-deps")
-    output.dir(traceShadedDeps.file("build/extracted/shadow"), "builtBy" to ":sdk:trace-shaded-deps:extractShadowJar")
-  }
-}
 
 dependencies {
   api(project(":api:all"))
   api(project(":sdk:common"))
 
-  compileOnly(project(":sdk:trace-shaded-deps"))
+  implementation("org.jctools:jctools-core")
 
   implementation(project(":semconv"))
 

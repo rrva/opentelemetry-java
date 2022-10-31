@@ -14,7 +14,7 @@ otelJava.moduleName.set("io.opentelemetry.sdk.extension.incubator")
 dependencies {
   api(project(":sdk:all"))
 
-  compileOnly(project(":sdk:trace-shaded-deps"))
+  implementation("org.jctools:jctools-core")
 
   annotationProcessor("com.google.auto.value:auto-value")
 

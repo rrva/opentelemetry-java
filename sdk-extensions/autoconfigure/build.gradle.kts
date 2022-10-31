@@ -25,8 +25,7 @@ dependencies {
 
   annotationProcessor("com.google.auto.value:auto-value")
 
-  testImplementation(project(":sdk:trace-shaded-deps"))
-
+  testImplementation("org.jctools:jctools-core")
   testImplementation(project(":sdk:testing"))
   testImplementation("com.linecorp.armeria:armeria-junit5")
   testImplementation("com.linecorp.armeria:armeria-grpc")
@@ -86,7 +85,7 @@ testing {
         implementation(project(":exporters:prometheus"))
         implementation(project(":exporters:zipkin"))
         implementation(project(":sdk:testing"))
-        implementation(project(":sdk:trace-shaded-deps"))
+        implementation("org.jctools:jctools-core")
         implementation(project(":semconv"))
 
         implementation("com.google.guava:guava")
